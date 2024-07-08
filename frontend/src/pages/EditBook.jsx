@@ -15,7 +15,7 @@ const EditBook = () => {
     const { enqueueSnackbar } = useSnackbar()
     useEffect(() => {
         setLoading(true);
-        axios.get(`https://fantastic-engine-579p7g979qg24jwp-5555.app.github.dev/books/${id}`)
+        axios.get(`http://localhost:5555/books/${id}`)
             .then((response) => {
                 setTitle(response.data.title)
                 setAuthor(response.data.author)
@@ -35,7 +35,7 @@ const EditBook = () => {
         };
         setLoading(true);
         axios
-            .put(`https://fantastic-engine-579p7g979qg24jwp-5555.app.github.dev/books/${id}`, data)
+            .put(`http://localhost:5555/books/${id}`, data)
             .then(() => {
                 setLoading(false)
                 enqueueSnackbar('Book edited successfully', { variant: 'success' })
