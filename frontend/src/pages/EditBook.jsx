@@ -15,7 +15,7 @@ const EditBook = () => {
     const { enqueueSnackbar } = useSnackbar()
     useEffect(() => {
         setLoading(true);
-        axios.get(`http://localhost:5555/books/${id}`)
+        axios.get(`https://book-store-backend-hwea.onrender.com/books/${id}`)
             .then((response) => {
                 setTitle(response.data.title)
                 setAuthor(response.data.author)
@@ -35,7 +35,7 @@ const EditBook = () => {
         };
         setLoading(true);
         axios
-            .put(`http://localhost:5555/books/${id}`, data)
+            .put(`https://book-store-backend-hwea.onrender.com/books/${id}`, data)
             .then(() => {
                 setLoading(false)
                 enqueueSnackbar('Book edited successfully', { variant: 'success' })
