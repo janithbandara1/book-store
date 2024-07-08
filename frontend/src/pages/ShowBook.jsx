@@ -11,7 +11,7 @@ const ShowBook = () => {
 
     useEffect(() => {
         setLoading(true);
-        axios.get(`https://fantastic-engine-579p7g979qg24jwp-5555.app.github.dev/books/${id}`)
+        axios.get(`http://localhost:5555/books/${id}`)
             .then((response) => {
                 setBook(response.data);
                 setLoading(false);
